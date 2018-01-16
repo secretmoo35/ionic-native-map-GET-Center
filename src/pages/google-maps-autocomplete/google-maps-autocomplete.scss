@@ -1,0 +1,32 @@
+page-google-maps-autocomplete {
+    margin: 10vh 5vw 10vh 5vw !important;
+    height: 80vh !important;
+    width: 90vw !important;
+    // ion-list {
+    //     margin-top: 45px !important;
+    // }
+    p {
+        margin-left: 16px !important;
+    }
+    .label {
+        white-space: normal !important;
+    }
+    .item {
+        padding: 0px !important
+    }
+    .searchbar-ios .searchbar-input {
+        background-color: #eeeded !important;
+        border-radius: 15px !important;
+    }
+    .searchbar-ios {
+        background: white !important;
+        text-align: center;
+        border-bottom: none !important;
+    }
+    .searchbar-input-container {
+        margin-top: 6px;
+    }
+    .scroll-content {
+        overflow: auto !important;
+    }
+}

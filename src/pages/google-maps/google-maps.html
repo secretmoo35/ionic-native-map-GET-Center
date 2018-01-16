@@ -1,0 +1,18 @@
+<ion-header>
+
+  <ion-navbar color="danger">
+    <ion-title>Native map</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only clear end (click)="googleMapsAutocomplete()">
+        <ion-icon name="search"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <div #map class="map"></div>
+  <button ion-button color="danger" class="btn-cf" (click)="doConfirm()">Confirm</button>
+</ion-content>
