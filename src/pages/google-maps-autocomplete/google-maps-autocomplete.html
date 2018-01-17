@@ -19,7 +19,7 @@
 
 
 <ion-content>
-  <ion-searchbar mode="ios" [(ngModel)]="autocomplete.query" (ionInput)="updateSearch()" placeholder="ค้นหาสถานที่">
+  <ion-searchbar mode="ios" [(ngModel)]="autocomplete.query" (ionInput)="updateSearch()" placeholder="ค้นหาสถานที่" (window:keydown)="getItems($event)">
   </ion-searchbar>
   <ion-list>
     <ion-item *ngFor="let item of autocompleteItems" (click)="chooseItem(item)">

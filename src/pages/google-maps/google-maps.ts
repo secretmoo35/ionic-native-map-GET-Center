@@ -59,11 +59,11 @@ export class GoogleMapsPage {
         this.location = res.latLng;
         let options = {
           target: this.location,
-          zoom: 16,
-          duration: 3000
+          zoom: 15,
+          duration: 1000
         };
 
-        this.map.moveCamera(options);
+        this.map.animateCamera(options);
         this.reverseGeocode();
         this.onMapMove();
         this.onMyLocationClick();
@@ -97,8 +97,26 @@ export class GoogleMapsPage {
 
     this.map.clear();
 
+    let canvas;
+    canvas = document.createElement('canvas');
+    canvas.width = 180;
+    canvas.height = 50;
+    let context = canvas.getContext('2d');
+
+    var img = new Image();
+    img.src = 'https://thumbs.dreamstime.com/b/served-banquet-restaurant-table-holiday-dishes-snack-cutlery-wine-water-glasses-european-food-47606077.jpg';
+    context.drawImage(img, 0, 0, 55, 55);
+
+    context.font = 'bolder 12pt arial';
+    context.fillStyle = 'black';
+    context.fillText('Served Banquet Restaurant', 60, 15);
+
+    context.font = '10pt arial';
+    context.fillStyle = 'black';
+    context.fillText('4.5 Review', 60, 30);
+
     this.map.addMarker({
-      title: this.address,
+      title: canvas.toDataURL('image/png', 1),
       snippet: "Edit detail. Click here!",
       icon: {
         url: './assets/icon/pin_transparent.png',

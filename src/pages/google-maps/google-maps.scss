@@ -1,6 +1,9 @@
 page-google-maps {
     .map {
         height: 100% !important;
+        justify-content: center;
+        display: flex!important;
+        align-items: center!important;
     }
     .map:after {
         width: 22px;
@@ -26,6 +29,14 @@ page-google-maps {
     }
     .z-index {
         z-index: 0 !important;
+    }
+    .info-item {
+        width: 300px !important;
+        margin: 0px !important;
+        margin-top: -200px !important;
+        .item-inner {
+            border-bottom: none !important;
+        }
     }
 }
 

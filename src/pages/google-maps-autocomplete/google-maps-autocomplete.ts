@@ -43,18 +43,25 @@ export class GoogleMapsAutocompletePage {
       types: [], // other types available in the API: 'establishment', 'regions', and 'cities'
       input: this.autocomplete.query
     }
-    this.acService.getPlacePredictions(config, (predictions, status) => {
-      this.autocompleteItems = [];
-      if (status === 'OK') {
-        predictions.forEach((prediction) => {
-          this.autocompleteItems.push(prediction);
-        });
+    this.acService.getPlacePredictions(config, (places_predictions, status) => {
+      if (status === google.maps.places.PlacesServiceStatus.OK) {
+        this.autocompleteItems = places_predictions;
+      }
+      else {
+        this.autocompleteItems = [];
       }
     });
   }
 
   chooseItem(item: any) {
     this.viewCtrl.dismiss(item);
+  }
+
+  getItems(e) {
+    if (e.keyCode == 13) {
+      let activeElement = <HTMLElement>document.activeElement;
+      activeElement && activeElement.blur && activeElement.blur();
+    }
   }
 
 }
